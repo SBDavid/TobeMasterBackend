@@ -8,7 +8,7 @@ var userProfileService = require('../service/UserProfile');
 // 查询用户
 router.get('/get/:account', function(req, res, next) {
 
-    userProfileService.get(req.params.account).then(
+    userProfileService.prototype.get(req.params.account).then(
         function(userProfile) {
             res.send(responseUtils.success(userProfile));
         },
@@ -20,7 +20,7 @@ router.get('/get/:account', function(req, res, next) {
 // 添加用户
 router.post('/regist', function(req, res, next) {
 
-  userProfileService.save(req.body.account, req.body.name).then(
+  userProfileService.prototype.save(req.body.account, req.body.name).then(
   	function(userProfile) {
       res.send(responseUtils.success(userProfile));
     },
