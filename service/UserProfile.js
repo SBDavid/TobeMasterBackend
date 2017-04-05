@@ -10,7 +10,6 @@ userProfileService.prototype.get = function(account) {
     if (account == undefined) {
         return Promise.reject('account不能为空！');
     }
-
     var query = new AV.Query(UserProfile);
 
     query.equalTo('account', account);
